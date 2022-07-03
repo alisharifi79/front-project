@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <script src="https://unpkg.com/vue@3"></script>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <div id="app">
+            <div class="nav-bar"></div>
+            <div class="cart">cart({{ cart }})</div>
+            <div class="product-display">
+                <div class="product-container">
+                    <div class="product-image">
+                        <img :src="image">
+                    </div>
+                    <div class="product-info">
+                        <h1>{{ title }}</h1>
+                        <p v-if="inStock">we have it!</p>
+                        <p v-else>out of stock</p>
+                        <ul>
+                            <li v-for="detail in details">{{ detail }}</li>
+                        </ul>
+                        <div v-for="(variant, index) in variants" :key="variant.id" @mouseover="updateVariant(index)" class="color-circle" :style="{ backgroundColor: variant.color }"></div>
+                        <button class="button" v-on:click="addToCart" :class="{ disabledButton: !inStock }" :disabled="!inStock"> Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <!--import JS-->
+        <script type="text/javascript" src="index.js"></script>
+
+        <!--mount app-->
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
+    </body>
+</html>

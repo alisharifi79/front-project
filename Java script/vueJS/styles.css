@@ -1,0 +1,11 @@
+.color-circle {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.disabledButton {
+    background-color: aliceblue;
+    cursor: not-allowed;
+}
