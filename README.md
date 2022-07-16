@@ -1,2 +1,2 @@
 # front-project
-this is just few small project as i learn html ,css , bootstrap and javascript.
+this is just few project as i learn html ,css , bootstrap and javascript.
